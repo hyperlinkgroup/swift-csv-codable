@@ -103,6 +103,10 @@ ExportManager.toCSVDocument(people) { result in
 
 #### SwiftUI
 
+To save the generated file from your SwiftUI-App in the file system, you need to use the `fileExporter()`-Modifier and reference the generated `CSVDocument` by calling `ExportManager.toCSVDocument(:_)` 
+
+<img src="assets/save_macos.jpeg" width="120">
+
 ```Swift
 struct ContentView: View {
     @State private var document: CSVDocument?
@@ -143,8 +147,30 @@ struct ContentView: View {
 
 #### UIKit
 
+For sharing and saving the file in your UIKit-App, you can use our `.share(:_)`-Function from any `UIViewController`. It creates and opens automatically an `UIActivityViewController`.
+
+<img src="assets/sharesheet_uikit.jpeg" width="120">
+
 ```Swift
+class ViewController: UIViewController {
 
+    func exportCSV() {
+        let people: [Person]
+
+        // fill array with content
+        
+        ExportManager.saveAsCSV(people, fileName: "MyCSVFile.csv") { result in
+            switch result {
+            case .success(let url):
+                print("Saved successfully at \(url)")
+                // Open ActivityViewController
+                ExportManager.share(url: url, viewController: self) {
+                    // ShareSheet was closed
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
 ```
-
-

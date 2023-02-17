@@ -12,7 +12,7 @@ import UIKit
 
 extension ExportManager {
     /**
-     Opens AcitivityViewController for Sharing- and Saving-Options
+     Opens ActivityViewController for Sharing- and Saving-Options
      */
     public static func share(url: URL, viewController: UIViewController, completion: (() -> Void)? = nil) {
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)

@@ -9,7 +9,7 @@ import Foundation
 
 extension Encodable {
     /**
-     Creates a dictionary of Key-Value-Pairs (property names and property values) for every encodable object
+     Creates a dictionary of Key-Value-Pairs (property names and property values) for every encodable object.
      
      - Important:
      Throws an error if the class implements Firebase-specific properties, like @DocumentID. Maybe specific CodingKeys for exluding these properties would work.

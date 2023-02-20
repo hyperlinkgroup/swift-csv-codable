@@ -1,6 +1,6 @@
 # Swift CSV Codable Package
 
-This repository contains a simple , wrapped in a Swift Package.
+This repository contains a small Swift Package, that helps writing Codable-Objects into CSV-Files.
 
 It is made by **[SPACE SQUAD](https://www.spacesquad.de)**! We make great software with ♥️ in Berlin.
 
@@ -34,11 +34,9 @@ In the files you need any CSV-Capabilities add the import-Statement on top of yo
 import CSVCodable
 ```
 
+---
 
 ## How to Use
-
-This Package enables 
-
 ### Generate CSV Content
 
 ```Swift
@@ -62,7 +60,7 @@ John;29"
 ```
 
 ### Configuration
-During the export process you might need some custom settings. For now all values are separated by semicolons and can be changed by initializing the `ExportManager` with a custom configuration object.
+During the export process you might need some custom settings. For now, all values are separated by semicolons and can be changed by initializing the `ExportManager` with a custom configuration object.
 
 More customization options will be available in future releases.
 
@@ -147,7 +145,7 @@ struct ContentView: View {
 
 #### UIKit
 
-For sharing and saving the file in your UIKit-App, you can use our `.share(:_)`-Function from any `UIViewController`. It creates and opens automatically an `UIActivityViewController`.
+For sharing and saving the file in your UIKit-App, you can use our `.share(:_)`-Function from any `UIViewController`. It creates and automatically opens an `UIActivityViewController`.
 
 <img src="assets/sharesheet_uikit.jpeg" width="300">
 

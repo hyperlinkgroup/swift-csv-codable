@@ -5,7 +5,6 @@
 //  Created by Anna Münster on 14.02.23.
 //
 
-#if canImport(SwiftUI)
 import SwiftUI
 import UniformTypeIdentifiers
 
@@ -55,4 +54,3 @@ public struct CSVDocument: FileDocument {
         return FileWrapper(regularFileWithContents: data)
     }
 }
-#endif

@@ -76,7 +76,10 @@ public class ExportManager {
             
             let values = encodedDic.map { objectDic in
                 objectDic
-                    .map { String(describing: $0.value) }
+                    .map { String(describing: $0.value)
+                        .replacingOccurrences(of: "\n", with: "")
+                        .replacingOccurrences(of: configuration.delimiter, with: "")
+                    }
                     .joined(separator: configuration.delimiter)
             }
            
